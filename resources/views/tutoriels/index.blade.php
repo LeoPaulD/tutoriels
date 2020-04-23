@@ -5,7 +5,7 @@
 @show
 
 @section('content')
-<div di>
+<div>
 <div class="d-flex justify-content-center flex-wrap" >
     <div class="row col-md-4 col-sm-10 mb-3 col-lg-3 col-xl-3">
             <div class="col-md-12">
