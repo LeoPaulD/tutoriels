@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Tutoriel;
 use App\Tuto_categorie;
 
@@ -14,10 +15,10 @@ class TutorielController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('tutoriels.index', [
-            'tutoriels' => Tutoriel::all()
-            ]);
+    {   
+        $categories = DB::table('tuto_categories')->orderBy('titre', 'desc')->get();
+        $tutoriels =  DB::table('tutoriels')->get();
+        return view('tutoriels.index', compact('categories', 'tutoriels'));
     }
 
     /**

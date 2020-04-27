@@ -11,7 +11,7 @@ class Tutoriel extends Model
         'titre',
         'lien',
         'description',
-        'tutocategorie_id',
+        'categorie_id',
         
     ];
 

@@ -11,29 +11,22 @@
             <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">Filtres</div>
-                        <div class="card-body">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" >
-                                <label class="custom-control-label" for="customCheck1">Audiovisuel</label>
-                            </div>
+                        <div class="card-body">                              
+                                <form name="search_something" action="/tutoriels" method="GET">
+                                <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck" onclick="toggle(this);">
+                                        <label class="custom-control-label" for="customCheck">Toutes les catégories</label>
+                                </div>
+                                @foreach ($categories as $item)
+                                   
+                                   <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="{{$item->id}}" name="filtre[]" value="{{$item->titre}}" >
+                                    <label class="custom-control-label" for="{{$item->id}}">{{$item->titre}}</label>
+                                </div>
+                               @endforeach
                             
-                            
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" >
-                                <label class="custom-control-label" for="customCheck3">Web</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck4" >
-                                <label class="custom-control-label" for="customCheck4">Photo</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck5" >
-                                <label class="custom-control-label" for="customCheck5">Illustration</label>
-                            </div>
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="customCheck6" >
-                                <label class="custom-control-label" for="customCheck6">Communication</label>
-                            </div>
+                            <button type="submit" class="btn btn-primary mt-2" >Filtrer</button>
+                            </form>
                             {{-- <br>
                             <ul>
                                 <div class="custom-control custom-checkbox">
@@ -50,36 +43,27 @@
             </div>
 
     </div>
+    
+    {{-- @if (isset($_GET['filtre']))
+        @foreach ($_GET['filtre'] as filtre $)
+            
+        @endforeach
+    @endif --}}
+ 
     <div class="row  col-md-8 col-sm-10 col-lg-9 col-xl-7" >
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Les Tutoriels</div>
                 <div class="card-body">
                     <div class="d-flex flex-wrap justify-content-around">
-                        <div class="card mb-4" style="width: 22rem;">
-                            <div class="card-header">
-                                <p class="" ><b>Fanzine #7 : Hatik reprend Maes, Diam’s, Soprano... avec Waxx et C.Cole #LeLive</b></p>
-                               
-                            </div>
-                            <div class="embed-responsive embed-responsive-16by9">
-                                    <iframe  src="https://www.youtube.com/embed/aNklaOLQOK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <div class="card-body">
-                            <div class="card-text">
-                                <p>Outils nécessaires pour ce tutoriel :</p>
-                                <p class="badge badge-secondary">Premiere pro</p>
-                                <p class="badge badge-secondary">Ordinateur</p>
-                            </div>
-
-                            </div>
-                        </div>
+                        @foreach ($tutoriels as $tuto)
                         <div class="card mb-4" style="width: 22rem;">
                                 <div class="card-header">
-                                    <p class="" ><b>Fanzine #7 : Hatik reprend Maes, Diam’s, Soprano... avec Waxx et C.Cole #LeLive</b></p>
-                                    
+                                <p class="" ><b>{{$tuto->titre}}</b></p>
+                                   
                                 </div>
                                 <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe  src="https://www.youtube.com/embed/aNklaOLQOK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe  src="https://www.youtube.com/embed/{{$tuto->lien}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                                 <div class="card-body">
                                 <div class="card-text">
@@ -90,37 +74,25 @@
     
                                 </div>
                             </div>
-
-                        <div class="card mb-4" style="width: 22rem;">
-                                <div class="card-header">
-                                    <p>Fanzine #7 : Hatik reprend Maes, Diam’s, Soprano... avec Waxx et C.Cole #LeLive</p>
-                                </div>
-                                <div class="embed-responsive embed-responsive-16by9">
-                                        <iframe  src="https://www.youtube.com/embed/aNklaOLQOK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-                                <div class="card-body">
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                            <div class="card mb-4" style="width: 22rem;">
-                                    <div class="card-header">
-                                        <p>Fanzine #7 : Hatik reprend Maes, Diam’s, Soprano... avec Waxx et C.Cole #LeLive</p>
-                                    </div>
-                                    <div class="embed-responsive embed-responsive-16by9">
-                                            <iframe  src="https://www.youtube.com/embed/aNklaOLQOK4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                    <div class="card-body">
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
+                        @endforeach
+                        
                     </div>
                     
 
-                    
+                    ￼
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
+</script>
 </div>
 @endsection

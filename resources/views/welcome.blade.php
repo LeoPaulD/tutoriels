@@ -8,44 +8,48 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap" rel="stylesheet">
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
-                height: 100vh;
+                
                 margin: 0;
             }
 
             .full-height {
-                height: 100vh;
+                
             }
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+           
 
             .position-ref {
                 position: relative;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+            
 
             .content {
                 text-align: center;
             }
 
-            .title {
+            .title h1 {
                 font-size: 84px;
+                font-family: 'Bebas Neue', cursive;
+            }
+
+            h2 {
+                font-size: 24px;
+                font-family: 'Bebas Neue', cursive;
+            }
+            p {
+                font-family: 'Roboto', sans-serif;
             }
 
             .links > a {
@@ -58,43 +62,73 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            
+            a {
+                text-decoration: none;
+            }
+            .entrer {
+                display: flex;
+                flex-direction: column;
+                
+                
+                
+                
+
+            }
+            
+            
+            .entrer > p {
+                
+                
+                font-size: 16px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
+    <body> 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div style="height: 50vh;" class="d-flex  justify-content-center align-items-center" >
+                    
+                    <div class="">
+                    <div class="title m-b-md">
+                       <h1> Cartable </h1>
+                    </div>
+                    <div class="links">
+                        
+                        <a href="https://github.com/LeoPaulD/tutoriels">Github du projet</a>
+                        <a href="http://leo-paul.fr">Portfolio de Léo-Paul</a>
+                        
+                    </div>
+                    <br>
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ route('tutoriels.index') }}">
+                        <div class="entrer btn btn-light border-dark m-3 pt-3">
+                            <p><i class="fas fa-lock-open"></i>
+                                Accéder au contenu
+                            </p>
+                        </div>
+                        </a>
+                    </div>
+                    </div>  
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+            <div class="row bg-light" >
+                          
+                    <!-- /.col-md-6 -->
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <div class="col-10 col-lg-8 m-3">
+                            <h2 class="text-left">Cartable, le catologue open source de formation en ligne</h2>
+                            <p class="text-justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus error obcaecati iusto, maxime magnam ducimus commodi laudantium nobis dolorem ipsum voluptatum nesciunt dolor quidem ipsam voluptates veniam illum nisi minima. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-0">
+                
+                      <img src="{{URL::asset('/images/multimedia.jpg')}}" alt="" class="img-fluid" />
+                    </div>
+                    
+                  </div>
+            
             </div>
-        </div>
     </body>
 </html>

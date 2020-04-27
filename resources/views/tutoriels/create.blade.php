@@ -20,17 +20,17 @@
                                 <input id="titre" type="text" class="form-control" name="titre"  required autofocus>
                             </div>
                         </div>
-                        <div class="input-group ">
-                            <div class="input-group-prepend">
-                                <label class="input-group-text" for="categorie_id">Catégories</label>
-                            </div>
-                            <select class="custom-select" id="categorie_id">
-                                <option selected>Choix de la catégorie...</option>
-                                @foreach ( $tutocats as $cat)
-                                    <option value="{{ $cat -> id }}">{{ $cat -> titre }} </option>
-                                @endforeach
+                       
+                        <div class="form-group">    
+                            <label for="categorie_id">Nom de la commune : </label>
+                            <select name="categorie_id" id="categorie_id" class="form-control form-control-lg">
+                              <option value="">--- Selectionnez une categorie ---</option>
+                              @foreach ( $tutocats as $cat)
+                            <option value="{{ $cat -> id }}">{{ $cat -> titre }} </option>
+                              @endforeach  
                             </select>
-                        </div>
+                          </div>
+                
                         <div class="form-group">
                             <label for="lien" class="col-md-4 control-label">Lien Youtube</label>
                             <div class="col-md-6">

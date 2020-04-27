@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Tuto_categorie;
+
 class TutoCategorieController extends Controller
 {
     /**
