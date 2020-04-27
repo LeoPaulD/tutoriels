@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Cartable : Le catalogue libre d'accès de formations</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -118,8 +118,12 @@
                     <!-- /.col-md-6 -->
                     <div class="col-md-6 d-flex align-items-center justify-content-center">
                         <div class="col-10 col-lg-8 m-3">
-                            <h2 class="text-left">Cartable, le catologue open source de formation en ligne</h2>
-                            <p class="text-justify"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus error obcaecati iusto, maxime magnam ducimus commodi laudantium nobis dolorem ipsum voluptatum nesciunt dolor quidem ipsam voluptates veniam illum nisi minima. </p>
+                            <h2 class="text-left">Cartable, le catologue libre d'accès de formations en ligne</h2>
+                            <p class="text-justify">Cette application web Cartable, dans sa première version permet à Léo-Paul, son créateur, de référencer des vidéos qui lui ont permis d'acquérir de nouvelles compétences téchnique dans différents dommaines (vidéo, photo, communication, développement web) ainsi qu'à enrichir sa culture sur ces sujets.
+                                <br>
+                                <br>
+                                Le projet étant open source, vous pouvez le retrouver sur Github pour vous en servir et créer une application personnalisé qui correspond à vos centres d'intérêt ou pour l'enrichir et faire évoluer cette plateforme.
+                            </p>
                         </div>
                     </div>
                     <div class="col-md-6 col-0">

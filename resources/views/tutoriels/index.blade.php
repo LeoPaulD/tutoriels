@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    <title>Liste des Tutoriels</title>
+    <title>Cartable - Le catalogue</title>
 @show
 
 @section('content')
