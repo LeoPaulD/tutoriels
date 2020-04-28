@@ -120,7 +120,7 @@
                             <p class="text-justify">Cette application web Cartable, dans sa première version permet à Léo-Paul, son créateur, de référencer des vidéos qui lui ont permis d'acquérir de nouvelles compétences téchniques dans différents dommaines (vidéo, photo, communication, développement web) ainsi qu'à enrichir sa culture sur ces sujets.
                                 <br>
                                 <br>
-                                Le projet étant open source, vous pouvez le retrouver sur Github pour vous en servir et créer une application personnalisé qui correspond à vos centres d'intérêt ou pour l'enrichir et faire évoluer cette plateforme.
+                                Le projet étant open source, vous pouvez le retrouver sur Github pour vous en servir et créer une application personnalisée qui correspond à vos centres d'intérêt ou pour l'enrichir et faire évoluer cette plateforme.
                             </p>
                         </div>
                     </div>
