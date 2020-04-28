@@ -23,9 +23,7 @@
                 margin: 0;
             }
 
-            .full-height {
-                
-            }
+           
 
            
 
@@ -97,8 +95,8 @@
                     </div>
                     <div class="links">
                         
-                        <a href="https://github.com/LeoPaulD/tutoriels">Github du projet</a>
-                        <a href="http://leo-paul.fr">Portfolio de Léo-Paul</a>
+                        <a href="https://github.com/LeoPaulD/tutoriels" style="white-space: nowrap" >Github du projet</a>
+                        <a href="http://leo-paul.fr" style="white-space: nowrap">Portfolio de Léo-Paul</a>
                         
                     </div>
                     <br>
@@ -126,7 +124,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-0">
+                    <div class="col-md-6">
                 
                       <img src="{{URL::asset('/images/multimedia.jpg')}}" alt="" class="img-fluid" />
                     </div>
