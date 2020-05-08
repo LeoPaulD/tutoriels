@@ -17,6 +17,8 @@
                         </ul>
                         
                     @endforeach
+                    <a href="{{ route('tutocategories.tutoriels.index', 1) }}">
+                    <button class="btn btn-info">Aller aux formations</button></a>
                     
                 </div>
             </div>

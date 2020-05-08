@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">Créer une catégorie</div>
                 <div class="card-body">
-                    <a href="/tutoriels" class="btn btn-secondary">Retour aux catégories</a>
+                    <a href="{{ route('tutocategories.index') }}" class="btn btn-secondary">Retour aux catégories</a>
                     <form class="form-horizontal" method="POST" action="{{ route('tutocategories.store') }}">
                         {{ csrf_field() }}
                         <div class="form-group">

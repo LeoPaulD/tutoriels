@@ -11,8 +11,8 @@
             <div class="card">
                 <div class="card-header">Créer un tutoriel</div>
                 <div class="card-body">
-                    <a href="/tutoriels" class="btn btn-secondary">Retour aux tutoriels</a>
-                    <form class="form-horizontal" method="POST" action="{{ route('tutoriels.store') }}">
+                    <a href="{{ route('tutocategories.tutoriels.index', 1) }}" class="btn btn-secondary">Retour aux tutoriels</a>
+                    <form class="form-horizontal" method="POST" action="{{ route('tutocategories.tutoriels.store', 1) }}">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="titre" class="col-md-4 control-label">Titre</label>

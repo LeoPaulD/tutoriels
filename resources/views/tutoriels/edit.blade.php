@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-header">Créer un tutoriel</div>
                 <div class="card-body">
-                    <a href="/tutoriels" class="btn btn-secondary">Retour aux tutoriels</a>
+                    <a href="{{ route('tutocategories.tutoriels.index', 1) }}" class="btn btn-secondary">Retour aux tutoriels</a>
                     <form class="form-horizontal" method="POST" action="{{ route('tutocategories.tutoriels.update', [$tutoriel->categorie_id, $tutoriel->id]) }}">
                         @method('PATCH')
                         @csrf
