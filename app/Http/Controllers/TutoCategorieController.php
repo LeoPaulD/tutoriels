@@ -60,8 +60,8 @@ class TutoCategorieController extends Controller
      */
     public function edit($id)
     {
-        $tutocat = Tuto_categorie::find($id);
-        return view('tutocategories.edit');
+        $tutocategorie = Tuto_categorie::find($id);
+        return view('tutocategories.edit', compact('tutocategorie'));
 
     }
 
@@ -74,9 +74,9 @@ class TutoCategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tutocat = Tuto_categorie::find($id);
-        $tutocat->update($request->all());
-        $tutocat->save();
+        $tutocategorie = Tuto_categorie::find($id);
+        $tutocategorie->update($request->all());
+        $tutocategorie->save();
         return redirect('/tutocategories')->with('success', 'Catégorie mise à jour !');
 
     }

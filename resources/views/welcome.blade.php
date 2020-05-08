@@ -101,9 +101,9 @@
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <a href="{{ route('tutoriels.index') }}">
+                        <a href="{{ route('tutocategories.tutoriels.index', 1) }}" style="text-decoration:none !important;">
                         <div class="entrer btn btn-light border-dark m-3 pt-3">
-                            <p><i class="fas fa-lock-open"></i>
+                            <p ><i class="fas fa-lock-open"></i>
                                 Accéder au contenu
                             </p>
                         </div>
@@ -132,5 +132,9 @@
                   </div>
             
             </div>
+           
+
+            
+            
     </body>
 </html>

@@ -29,7 +29,14 @@
                             <option value="{{ $cat -> id }}">{{ $cat -> titre }} </option>
                               @endforeach  
                             </select>
-                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="souscat" class="col-md-4 control-label">Sous-catégorie</label>
+                            <div class="col-md-6">
+                                <input id="souscat" type="text" class="form-control" name="souscat">
+                            </div>
+                        </div>
                 
                         <div class="form-group">
                             <label for="lien" class="col-md-4 control-label">Lien Youtube</label>

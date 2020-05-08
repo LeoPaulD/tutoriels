@@ -12,32 +12,21 @@
                     <div class="card">
                         <div class="card-header">Filtres</div>
                         <div class="card-body">                              
-                                <form name="search_something" action="/tutoriels" method="GET">
-                                <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck" onclick="toggle(this);">
-                                        <label class="custom-control-label" for="customCheck">Toutes les catégories</label>
-                                </div>
+                                <ul>
                                 @foreach ($categories as $item)
                                    
-                                   <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="{{$item->id}}" name="filtre[]" value="{{$item->titre}}" >
-                                    <label class="custom-control-label" for="{{$item->id}}">{{$item->titre}}</label>
-                                </div>
+                                <a href="{{route('tutocategories.tutoriels.index', $item->id)}}">
+                                    <li>{{$item->titre}}</li>
+                                </a>
+                                       
+                                  
+                                   
+                                    
+                                
                                @endforeach
-                            
-                            <button type="submit" class="btn btn-primary mt-2" >Filtrer</button>
-                            </form>
-                            {{-- <br>
-                            <ul>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck11" >
-                                    <label class="custom-control-label" for="customCheck11">Culture</label>
-                                </div> 
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck12" >
-                                    <label class="custom-control-label" for="customCheck12">Tutoriels</label>
-                                </div> 
-                            </ul> --}}
+                            </ul>
+                           
+                           
                         </div>
                     </div>
             </div>

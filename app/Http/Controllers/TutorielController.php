@@ -14,13 +14,22 @@ class TutorielController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     
+    public function index($tutocategorie)
     {   
-        $categories = DB::table('tuto_categories')->orderBy('titre', 'desc')->get();
-        $tutoriels =  DB::table('tutoriels')->get();
+        $objettutocategorie = Tuto_categorie::findOrFail($tutocategorie);
+        
+        $categories = DB::table('tuto_categories')->orderBy('id', 'asc')->get();
+        if($tutocategorie == 1){
+            $tutoriels =  DB::table('tutoriels')->get();
+        }else {
+            $tutoriels =  DB::table('tutoriels')->where('categorie_id' , $tutocategorie )->get();
+        }
+        
         return view('tutoriels.index', compact('categories', 'tutoriels'));
     }
-
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -30,7 +39,7 @@ class TutorielController extends Controller
     {
         $tutocat = new Tuto_categorie(request()->all());
         
-        $tutocats = $tutocat::all(['id','titre'])->sortBy("titre");;
+        $tutocats = $tutocat::all(['id','titre'])->sortBy("titre");
 
 
         return view('tutoriels.create', compact('tutocats'));
@@ -58,17 +67,17 @@ class TutorielController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($categorie_id, Tutoriel $tutoriel)
     {
-        $tutoriel = Tutoriel::find($id);
-        return view('tutoriels.edit', compact('tutoriel'));
+        $tutocat = new Tuto_categorie(request()->all());
+        $tutocats = $tutocat::all(['id','titre'])->sortBy("titre");
+        return view('tutoriels.edit', compact('tutocats', 'tutoriel'));
     }
 
     /**
@@ -78,12 +87,13 @@ class TutorielController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($categorie_id, Request $request,  Tutoriel $tutoriel)
     {
-        $tutoriel = Tutoriel::find($id);
+       
         $tutoriel->update($request->all());
+        $categorie = $request->categorie_id;
         $tutoriel->save();
-        return redirect('/tutoriels')->with('success', 'Tutoriel mis à jour !');
+        return redirect()->route('tutocategories.tutoriels.index', $categorie)->with('success', 'Tutoriel mis à jour !');
     }
 
     /**

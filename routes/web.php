@@ -24,4 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('tutocategories', 'TutoCategorieController');
 
-Route::resource('tutoriels', 'TutorielController');
+
+Route::resource('tutocategories.tutoriels', 'TutorielController');
+

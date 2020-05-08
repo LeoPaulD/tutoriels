@@ -12,6 +12,7 @@ class Tutoriel extends Model
         'lien',
         'description',
         'categorie_id',
+        'souscat',
         
     ];
 
