@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
 @section('title')
-<title>Cartable - Le catalogue</title>
+<title>Cartable - 
+        @if ($objettutocategorie->id == 1)
+            Le Catalogue 
+       @else
+         {{$objettutocategorie->titre}}
+       @endif
+</title>
 @show
 
 @section('content')
@@ -41,7 +47,16 @@
         <div class="row  col-md-8 col-sm-10 col-lg-9 col-xl-7">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Les formations</div>
+                    <div class="card-header">
+                        @if ($objettutocategorie->id == 1)
+                         {{$objettutocategorie->titre}}  
+                        @else
+                         Les formations - {{$objettutocategorie->titre}}
+                        @endif
+                        
+                        
+
+                    </div>
                     <div class="card-body">
                         <div class="d-flex flex-wrap justify-content-around">
                             @foreach ($tutoriels as $tuto)

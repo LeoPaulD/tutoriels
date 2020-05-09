@@ -28,12 +28,12 @@ class TutorielController extends Controller
         
         $categories = DB::table('tuto_categories')->orderBy('id', 'asc')->get();
         if($tutocategorie == 1){
-            $tutoriels =  DB::table('tutoriels')->get();
+            $tutoriels =  DB::table('tutoriels')->orderBy('id', 'desc')->get();
         }else {
-            $tutoriels =  DB::table('tutoriels')->where('categorie_id' , $tutocategorie )->get();
+            $tutoriels =  DB::table('tutoriels')->where('categorie_id' , $tutocategorie )->orderBy('id', 'desc')->get();
         }
         
-        return view('tutoriels.index', compact('categories', 'tutoriels'));
+        return view('tutoriels.index', compact('categories', 'tutoriels', 'objettutocategorie'));
     }
    
     /**
