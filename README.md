@@ -1,78 +1,144 @@
-<p align="center">Cartable, le catologue libre d'accès de formations en ligne</p>
+<h1 align="center"><b>Cartable, le catologue libre d'accès de formations en ligne </b></h1>
 
 <p align="center">
-    Version de Laravel
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 
 </p>
 
-## About Laravel
+## Le projet 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Cette application web Cartable, dans sa première version permet à Léo-Paul, son créateur, de référencer des vidéos qui lui ont permis d'acquérir de nouvelles compétences techniques dans différents domaines (vidéo, photo, communication, développement web) ainsi qu'à enrichir sa culture sur ces sujets. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Le projet étant open source, vous pouvez le retrouver sur Github pour vous en servir et créer une application personnalisée qui correspond à vos centres d'intérêt ou pour l'enrichir et faire évoluer cette plateforme.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installer le projet
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+git clone https://github.com/LeoPaulD/tutoriels.git
+```
 
-## Laravel Sponsors
+Dans le dossier récupéré:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+````
+cd tutoriels
+````
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+* Installer les dépendances du projet indiquées dans `composer.json`. Elles sont intallées dans le dossier `vendor/'
 
-## Contributing
+````
+composer install
+````
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+* Installer les paquets npm indiqués dans `package.json`. Ils sont installés dans le dossier `nodes_modules/`
 
-## Code of Conduct
+```
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* on duplique le fichier .env.example, on le renomme en .env et on indique nos informations de connexion à la base
 
-## Security Vulnerabilities
+* on lance les migrations pour ajouter les tables à notre base 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+````
+php artisan migrate
+````
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Le fichier .env
+
+La première chose à configurer est le fichier .env, à la racine. Il contient notamment:
+* les informations de connexion à une base de données
+* le nom et l'URL de l'application
+* le mode debug (TRUE, en environnement de développement, FALSE en production)
+* la configuration du driver de mail
+
+Pour chaque environnement, il faut aussi générer une clé:
+
+````
+php artisan key:generate
+````
+
+### VOir le site sur sa machine
+
+````
+php artisan serve
+````
+
+## Personnaliser le projet
+
+### Personnaliser le projet
+
+Rendez-vous à cette adresse <a href="http://localhost:8000">localhost::8000</a>
+
+Accédez au contenu -> le site est vide
+
+#### Se connecter 
+
+Dans le projet tutoriel allez dans le fichier routes et modifiez le fichier web.php
+
+````
+routes/web.php
+````
+Ligne 21, remplacez "Auth::routes(['register' => false]);" par "Auth::routes;"
+
+````
+Auth::routes;
+````
+
+Allez maintenant à cette adresse  <a href="http://localhost:8000/register">localhost::8000/register</a>
+
+Inscrivez-vous 
+
+Vous avez maintenant un compte pour administrer le contenu.
+
+Ps : Si vous ne souhaitez pas que d'autres utilisateurs puissent avoir un compte administrateur, remmettez "Auth::routes(['register' => false]);" dans le fichier web.php
+
+
+#### Ajouter une catégorie
+
+Rendez-vous à cette adresse <a href="http://localhost:8000/tutocategories/create">localhost::8000/tutocategories/create</a>
+
+Vous pouvez ajouter votre catégorie.
+
+Ps : la première catégorie référence toutes les formations il est donc préférérable de l'appeler Toutes les formations
+
+#### Ajouter une formation
+
+Rendez-vous à cette adresse <a href="http://localhost:8000/tutocategories/1/tutoriels/create">localhost::8000/tutocategories/1/tutoriels/create</a>
+
+Vous pouvez ajouter vos formations.
+
+
+## Déployer le projet
+
+### Serveur SSH
+
+### Installer NodeJS
+
+### Installer PHP
+
+### Installer Composer
+
+### Installer et configurer Nginx
+
+### Installer et configurer PhpMyAdmin
+
+
+
+
+## Licence
+<p align="center">
+<img src="data:image/png;base64,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" alt="CC-BY-NC-SA">
+
+</p>
+
+CC : Creative Commons propose des contrats-type ou licences pour la mise à disposition d’œuvres en ligne. Inspirés par les licences libres, les mouvementsopen source et open access, ces licences facilitent l’utilisation d’œuvres (textes, photos, musique, sites web, etc).
+
+BY : ATTRIBUTION :  Toutes les licences Creative Commons obligent ceux qui utilisent vos oeuvres à vous créditer de la manière dont vous le demandez, sans pour autant suggérer que vous approuvez leur utilisation ou leur donner votre aval ou votre soutien.
+
+NC : PAS D’UTILISATION COMMERCIALE :  Vous autorisez les autres à reproduire, à diffuser et à modifier votre œuvre, pour toute utilisation autre que commerciale, à moins qu’ils obtiennent votre autorisation au préalable.
+
+SA : PARTAGE DANS LES MEMES CONDITIONS: Vous autorisez les autres à reproduire, diffuser et modifier votre œuvre, à condition qu’ils publient toute adaptation de votre œuvre sous les mêmes conditions que votre oeuvre. Toute personne qui souhaiterait publier une adaptation sous d’autres conditions doit obtenir votre autorisation préalable.
+
